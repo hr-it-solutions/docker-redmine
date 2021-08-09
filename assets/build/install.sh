@@ -96,6 +96,7 @@ fi
 exec_as_redmine bundle config set path "${REDMINE_INSTALL_DIR}/vendor/bundle"
 exec_as_redmine bundle config set without development test
 exec_as_redmine bundle install -j$(nproc)
+exec_as_redmine gem install rufus-scheduler
 
 # finalize redmine installation
 exec_as_redmine mkdir -p ${REDMINE_INSTALL_DIR}/tmp ${REDMINE_INSTALL_DIR}/tmp/pdf ${REDMINE_INSTALL_DIR}/tmp/pids ${REDMINE_INSTALL_DIR}/tmp/sockets
